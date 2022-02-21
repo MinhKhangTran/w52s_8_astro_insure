@@ -8,70 +8,35 @@
 
 :root {
   /* font-family */
-  --ff-heading: "Rubik", sans-serif;
+  --ff-heading: "DM Serif Display", serif;
   --ff-body: "Karla", sans-serif;
 
   /* colors */
-  /* Deep Blue */
-  --primary: 248 87% 41%;
-  /* Banana */
-  --secondary-100: 47 100% 50%;
-  --secondary-200: 47 100% 70%;
-  --secondary-300: 47 100% 80%;
-  --secondary-400: 47 100% 90%;
-  /* Lilac */
-  --tertiary-100: 238 100% 90%;
-  --tertiary-200: 238 100% 92%;
-  --tertiary-300: 238 100% 94%;
-  --tertiary-400: 238 100% 96%;
-  /* Sunset */
-  --quaternary-100: 19 100% 81%;
-  --quaternary-200: 19 100% 86%;
-  --quaternary-300: 19 100% 89%;
-  --quaternary-400: 19 100% 95%;
-  /* Lime Green */
-  --quinary-100: 91 100% 73%;
-  --quinary-200: 91 100% 80%;
-  --quinary-300: 91 100% 90%;
-  --quinary-400: 91 100% 95%;
-  /* 50 Shades of Gray */
-  --gray-100: 248 7% 10%;
-  --gray-200: 248 7% 28%;
-  --gray-300: 248 7% 40%;
-  --gray-400: 248 7% 60%;
-  --gray-500: 248 7% 75%;
-  --gray-600: 248 7% 85%;
-  --gray-700: 248 7% 90%;
-  --gray-800: 248 7% 95%;
-
-  /* Line heights */
-  --lh-100: 100%;
-  --lh-200: 115%;
-  --lh-300: 120%;
-  --lh-400: 130%;
-  --lh-500: 140%;
-  --lh-600: 150%;
+  /* Dark Violet */
+  --dark-violet: hsl(256, 26%, 20%);
+  /* Grayish Blue */
+  --grayish-blue: hsl(216, 30%, 68%);
+  /* Very Dark Violet */
+  --very-dark-violet: hsl(270, 9%, 17%);
+  /* Dark Grayish Violet */
+  --dark-grayish-violet: hsl(273, 4%, 51%);
+  /* Very Light Gray */
+  --very-light-gray: hsl(0, 0%, 98%);
 
   /* font-sizes */
   --h1: 3rem;
-  --h2: 2rem;
-  --h3: 1.5rem;
-  --h4: 1.25rem;
-  --h5: 1rem;
-  --button-text: 1.25rem;
+  --h2: 1.75rem;
+  --h3: 2.5rem;
   --body: 1rem;
-  --small: 0.8125rem;
+  --small: 0.875rem;
+  --link: 0.937rem;
 }
 
 @media (--sm) {
   :root {
     /* font-sizes */
-    --h1: 3.5rem;
-    --h2: 3rem;
-    --h3: 2rem;
-    --h4: 1.5rem;
-    --body: 1.25rem;
-    --small: 0.875rem;
+    --h1: 4.5rem;
+    --h3: 3.4375rem;
   }
 }
 
@@ -80,8 +45,9 @@
 body {
   font-family: var(--ff-body);
   font-size: var(--body);
-  color: hsl(var(--gray-200));
-  line-height: 1.5;
+  color: var(--very-dark-violet);
+  line-height: 64px;
+  letter-spacing: -1.5%;
   overflow-x: hidden;
   /* min-height: 100vh;
 	  overflow-x: hidden;

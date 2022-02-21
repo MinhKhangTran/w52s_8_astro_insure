@@ -1,6 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import CTA from "../components/CTA.astro";
+
 let title = "Astro Portfolio W52s #8";
 let description = "Astro Portfolio W52s #8";
 const permalink = Astro.site.href;
@@ -8,5 +12,11 @@ let canonicalURL = Astro.request.canonicalURL;
 ---
 
 <Layout {title} {description} {permalink} current="index" {canonicalURL}>
-  <main id="main-content"></main>
+  <main id="main-content">
+    <h1 class="h1 bg-dark-violet text-very-light-gray">HALLO</h1>
+    <p>Wie gehts</p>
+    <Hero />
+    <Features />
+    <CTA />
+  </main>
 </Layout>

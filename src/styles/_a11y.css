@@ -24,8 +24,8 @@
 }
 
 .skip-to-content {
-  background: hsl(var(--white));
-  color: hsl(var(--text-primary));
+  background: var(--very-light-gray);
+  color: var(--dark-violet);
   padding: 0.5em 1em;
   margin-inline: auto;
   transform: translateY(-120%);

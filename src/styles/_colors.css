@@ -1,82 +1,17 @@
 /* colors */
-.bg-primary {
-  background-color: hsl(var(--primary));
+.bg-dark-violet {
+  background-color: var(--dark-violet);
 }
-.text-primary {
-  color: hsl(var(--primary));
+.bg-dark-grayish-violet {
+  background-color: var(--dark-grayish-violet);
 }
-
-/* secondary */
-@each $color,
-  $index in (--secondary-100, --secondary-200, --secondary-300, --secondary-400),
-  (100, 200, 300, 400)
-{
-  .bg-secondary-$(index) {
-    background-color: hsl(var($(color)));
-  }
-  .text-secondary-$(index) {
-    color: hsl(var($(color)));
-  }
+.bg-very-light-gray {
+  background-color: var(--very-light-gray);
+}
+.text-dark-grayish-violet {
+  color: var(--dark-grayish-violet);
 }
 
-/* tertiary */
-@each $color,
-  $index in (--tertiary-100, --tertiary-200, --tertiary-300, --tertiary-400),
-  (100, 200, 300, 400)
-{
-  .bg-tertiary-$(index) {
-    background-color: hsl(var($(color)));
-  }
-  .text-tertiary-$(index) {
-    color: hsl(var($(color)));
-  }
-}
-/* quaternary */
-@each $color,
-  $index
-    in (--quaternary-100, --quaternary-200, --quaternary-300, --quaternary-400),
-  (100, 200, 300, 400)
-{
-  .bg-quaternary-$(index) {
-    background-color: hsl(var($(color)));
-  }
-  .text-quaternary-$(index) {
-    color: hsl(var($(color)));
-  }
-}
-/* quinary */
-@each $color,
-  $index in (--quinary-100, --quinary-200, --quinary-300, --quinary-400),
-  (100, 200, 300, 400)
-{
-  .bg-quinary-$(index) {
-    background-color: hsl(var($(color)));
-  }
-  .text-quinary-$(index) {
-    color: hsl(var($(color)));
-  }
-}
-
-/* gray */
-
-@each $color,
-  $index
-    in (--gray-100, --gray-200, --gray-300, --gray-400, --gray-500, --gray-600),
-  (100, 200, 300, 400, 500, 600)
-{
-  .bg-gray-$(index) {
-    background-color: hsl(var($(color)));
-  }
-  .text-gray-$(index) {
-    color: hsl(var($(color)));
-  }
-}
-
-@each $color, $index in (--gray-700, --gray-800), (700, 800) {
-  .bg-gray-$(index) {
-    background-color: hsl(var($(color)));
-  }
-  .text-gray-$(index) {
-    color: hsl(var($(color)));
-  }
+.text-very-light-gray {
+  color: var(--very-light-gray);
 }
