@@ -3,6 +3,8 @@ dist
 
 # dependencies
 node_modules/
+design/
+imagesOrigin/
 
 # logs
 npm-debug.log*
