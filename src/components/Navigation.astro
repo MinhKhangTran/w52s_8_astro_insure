@@ -1,1 +1,185 @@
-<header>Navigation</header>
+---
+const navArray = [
+  { id: 1, text: "how we work", btn: false },
+  { id: 2, text: "blog", btn: false },
+  { id: 3, text: "account", btn: false },
+  { id: 4, text: "view plans", btn: true },
+];
+---
+
+<!-- navbar -->
+<header id="header">
+  <nav class="container">
+    <div class="nav-header d-flex">
+      <a href="/">
+        <img class="logo" src="/assets/images/logo.svg" alt="home" />
+      </a>
+
+      <section class="navbar-mobile-icon">
+        <button
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="navigation"
+          ><span class="sr-only">Menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+            ><g fill="none" fill-rule="evenodd"
+              ><path
+                fill="#FFF"
+                stroke="#2C2830"
+                stroke-width="1.5"
+                d="M.75.75h30.5v30.5H.75z"></path><g fill="#2C2830"
+                ><path d="M8 10h16v1.5H8zM8 15h16v1.5H8zM8 20h16v1.5H8z"
+                ></path></g
+              ></g
+            ></svg
+          >
+        </button>
+      </section>
+    </div>
+    <ul class="nav-bar" tabindex="-1">
+      {navArray.map((nav) => {
+        return (
+          <li>
+            <a
+              href="#"
+              class={`${nav.btn ? "text-dark cta-btn uppercase" : "uppercase"}`}
+            >
+              {nav.text}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggler = document.querySelector(".menu-toggle");
+  const navBar = document.querySelector(".nav-bar");
+  toggler.addEventListener("click", () => {
+    // Toggle class "opened". Set also aria-expanded to true or false.
+    if (-1 !== toggler.className.indexOf("opened")) {
+      toggler.className = toggler.className.replace(" opened", "");
+      toggler.setAttribute("aria-expanded", "false");
+      toggler.innerHTML = `   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+            ><g fill="none" fill-rule="evenodd"
+              ><path
+                fill="#FFF"
+                stroke="#2C2830"
+                stroke-width="1.5"
+                d="M.75.75h30.5v30.5H.75z"></path><g fill="#2C2830"
+                ><path d="M8 10h16v1.5H8zM8 15h16v1.5H8zM8 20h16v1.5H8z"
+                ></path></g
+              ></g
+            ></svg`;
+      navBar.className = navBar.className.replace(" opened", "");
+    } else {
+      toggler.className += " opened";
+      navBar.className += " opened";
+      toggler.setAttribute("aria-expanded", "true");
+      toggler.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g fill="none" fill-rule="evenodd"><path fill="#FFF" stroke="#2C2830" stroke-width="1.5" d="M.75.75h30.5v30.5H.75z"/><g fill="#2C2830"><path d="M10.873 9.563l11.314 11.314-1.06 1.06L9.813 10.623z"/><path d="M9.813 20.877L21.127 9.563l1.06 1.06-11.314 11.314z"/></g></g></svg>`;
+    }
+  });
+  // Check if responsive menu is open when resized and then remove
+  window.addEventListener("resize", () => {
+    if (
+      navBar.classList.contains("opened") &&
+      window.matchMedia("(min-width: 768px)").matches
+    ) {
+      toggler.className = toggler.className.replace(" opened", "");
+      toggler.setAttribute("aria-expanded", "false");
+      navBar.className = navBar.className.replace(" opened", "");
+    }
+  });
+</script>
+
+<style>
+  @import url("../styles/_media.css");
+
+  .nav-header {
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+  }
+  ul {
+    display: none;
+    padding-left: 0;
+    @media (--md) {
+      display: flex;
+      gap: 1.5rem;
+      margin-block: 0;
+    }
+  }
+  ul.opened {
+    position: absolute;
+    display: flex;
+    padding-block: 2rem;
+    width: 100%;
+    margin: 0;
+    min-height: calc(100vh - 5rem);
+    background-color: var(--very-dark-violet);
+    text-align: center;
+    flex-direction: column;
+    padding-inline-start: 0;
+    transform: translateX(-50%);
+    left: 50%;
+    z-index: 1000;
+    background-image: url(/assets/images/bg-pattern-mobile-nav.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  nav {
+    @media (--md) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  .navbar-mobile-icon {
+    @media (--md) {
+      display: none;
+    }
+  }
+  .navbar-mobile-icon button,
+  .navbar-mobile-icon input[type="button"] {
+    border: none;
+    display: flex;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--very-light-gray);
+    @media (--md) {
+      color: var(--dark-grayish-violet);
+    }
+  }
+  .cta-btn {
+    padding-inline: 1.75rem;
+
+    border: 1px solid var(--very-light-gray);
+    transition: all 0.2s ease-in;
+    background-color: transparent;
+    display: inline-block;
+    width: 90%;
+
+    @media (--md) {
+      padding-block: 0.875rem;
+      background-color: hsl(var(--white));
+      color: hsl(var(--dark));
+      border: 1px solid var(--very-dark-violet);
+      display: inline;
+    }
+    &:hover {
+      background-color: var(--very-dark-violet);
+      color: var(--very-light-gray);
+      @media (--md) {
+        background-color: var(--very-dark-violet);
+        color: var(--very-light-gray);
+      }
+    }
+  }
+</style>
