@@ -32,7 +32,7 @@
   --link: 0.937rem;
 }
 
-@media (--sm) {
+@media (--md) {
   :root {
     /* font-sizes */
     --h1: 4.5rem;
@@ -46,8 +46,8 @@ body {
   font-family: var(--ff-body);
   font-size: var(--body);
   color: var(--very-dark-violet);
-  line-height: 64px;
-  letter-spacing: -1.5%;
+  line-height: 26px;
+  letter-spacing: 0.0025em;
   overflow-x: hidden;
   /* min-height: 100vh;
 	  overflow-x: hidden;

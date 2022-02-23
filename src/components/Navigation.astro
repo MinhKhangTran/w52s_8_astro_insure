@@ -95,7 +95,9 @@ const navArray = [
 
 <style>
   @import url("../styles/_media.css");
-
+  header {
+    position: relative;
+  }
   .nav-header {
     align-items: center;
     justify-content: space-between;
@@ -104,6 +106,7 @@ const navArray = [
   ul {
     display: none;
     padding-left: 0;
+
     @media (--md) {
       display: flex;
       gap: 1.5rem;
@@ -149,17 +152,29 @@ const navArray = [
     background: transparent;
     cursor: pointer;
   }
+  li {
+    padding-block: 1.5rem;
+    @media (--md) {
+      padding-block: 0rem;
+    }
+  }
 
   a {
     text-decoration: none;
     color: var(--very-light-gray);
+    transition: all 0.2s ease-in;
+    &:hover {
+      @media (--md) {
+        color: var(--very-dark-violet);
+      }
+    }
     @media (--md) {
       color: var(--dark-grayish-violet);
     }
   }
   .cta-btn {
     padding-inline: 1.75rem;
-
+    padding-block: 1rem;
     border: 1px solid var(--very-light-gray);
     transition: all 0.2s ease-in;
     background-color: transparent;

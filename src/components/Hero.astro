@@ -1,1 +1,174 @@
-<section id="hero" aria-label="hero section">Hero</section>
+<section id="hero" aria-label="hero section">
+  <div class="fake_container">
+    <div class="left-panel">
+      <div class="left_pattern"></div>
+      <div class="right_pattern"></div>
+      <div class="line"></div>
+      <h1 class="h1">Humanizing your insurance.</h1>
+      <p>
+        Get your life insurance coverage easier and faster. We blend our
+        expertise and technology to help you find the plan that’s right for you.
+        Ensure you and your loved ones are protected.
+      </p>
+      <div class="button_wrapper">
+        <button class="button-text">View Plans</button>
+      </div>
+    </div>
+    <div class="right-panel">
+      <picture class="hero_image">
+        <source
+          media="(min-width: 23.5em)"
+          srcset={`/assets/images/image-intro-desktop.jpg`}
+        />
+        <source
+          media="(max-width: 23.5em)"
+          srcset={`/assets/images/image-intro-mobile.jpg`}
+        />
+        <img
+          srcset={`/assets/images/image-intro-mobile.jpg, /assets/images/image-intro-desktop.jpg`}
+          sizes="(min-width: 23.5em), (max-width: 23.5em)"
+          src={`/assets/images/image-intro-mobile.jpg`}
+          alt={`Hero image: a family holding hands`}
+        />
+      </picture>
+    </div>
+  </div>
+  <div class="left_pattern_lg"></div>
+  <div class="right_pattern_lg"></div>
+</section>
+
+<style>
+  @import url("../styles/_media.css");
+  #hero {
+    background-color: var(--dark-violet);
+    color: var(--very-light-gray);
+    position: relative;
+  }
+  .line {
+    display: none;
+    @media (--md) {
+      display: flex;
+      width: 150px;
+      height: 1px;
+      background-color: var(--very-light-gray);
+    }
+  }
+  .fake_container {
+    position: relative;
+    max-width: 1110px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    @media (--md) {
+      flex-direction: row;
+    }
+  }
+  .left-panel {
+    position: relative;
+    z-index: 10;
+    @media (--md) {
+      width: 45%;
+      padding-block: 6.625rem 8rem;
+    }
+    h1 {
+      position: relative;
+      padding-top: 5.875rem;
+      text-align: center;
+      width: 90%;
+      margin-inline: auto;
+      @media (--md) {
+        padding-top: 4rem;
+        text-align: left;
+        width: 100%;
+      }
+    }
+    p {
+      position: relative;
+      padding-block: 1.75rem 1.875rem;
+      text-align: center;
+      width: 90%;
+      margin-inline: auto;
+      @media (--md) {
+        text-align: left;
+        width: 100%;
+      }
+    }
+  }
+  .right-panel {
+    @media (--md) {
+      position: absolute;
+      width: 540px;
+      height: 650px;
+      top: 6.625rem;
+      left: calc(50% + 20px);
+    }
+  }
+  .button_wrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5.875rem;
+    @media (--md) {
+      justify-content: start;
+      padding-bottom: 0;
+    }
+  }
+  button {
+    padding-inline: 1.5rem;
+    padding-block: 1.25rem;
+    cursor: pointer;
+    border: 1px solid var(--very-light-gray);
+    transition: all 0.2s ease-in;
+    background-color: transparent;
+    color: var(--very-light-gray);
+    horiz &:hover {
+      background-color: var(--very-light-gray);
+      color: var(--very-dark-violet);
+    }
+  }
+  .left_pattern {
+    position: absolute;
+    background-image: url(/assets/images/bg-pattern-intro-left-mobile.svg);
+    background-repeat: no-repeat;
+    width: 168px;
+    height: 165px;
+    left: 0px;
+    top: 0;
+    @media (--md) {
+      background-image: none;
+    }
+  }
+  .left_pattern_lg {
+    @media (--md) {
+      position: absolute;
+      background-image: url(/assets/images/bg-pattern-intro-left-desktop.svg);
+      background-repeat: no-repeat;
+      width: 195px;
+      height: 504px;
+      left: 0;
+      top: 65%;
+    }
+  }
+  .right_pattern {
+    position: absolute;
+    background-image: url(/assets/images/bg-pattern-intro-right-mobile.svg);
+    background-repeat: no-repeat;
+    width: 124px;
+    height: 330px;
+    right: 0;
+    top: 70%;
+    @media (--md) {
+      background-image: none;
+    }
+  }
+  .right_pattern_lg {
+    @media (--md) {
+      position: absolute;
+      background-image: url(/assets/images/bg-pattern-intro-right-desktop.svg);
+      background-repeat: no-repeat;
+      width: 436px;
+      height: 593px;
+      right: 0%;
+      top: -15%;
+    }
+  }
+</style>
