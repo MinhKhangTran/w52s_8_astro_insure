@@ -1,1 +1,72 @@
-<section id="cta" aria-label="cta section">cta</section>
+<section class="bg-dark-violet container" id="cta" aria-label="cta section">
+  <h2 class="h3">Find out more about how we work</h2>
+  <button class="uppercase"> How we work </button>
+  <div class="pattern"></div>
+</section>
+
+<style>
+  @import url("../styles/_media.css");
+  section {
+    position: relative;
+    margin-top: 8.75rem;
+    padding-inline: 1.25rem;
+    padding-block: 4.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media (--md) {
+      flex-direction: row;
+      padding-inline: 5rem;
+      padding-block: 4.375rem;
+      margin-top: 9.875rem;
+      align-items: center;
+    }
+  }
+  h2 {
+    color: var(--very-light-gray);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    @media (--md) {
+      text-align: left;
+      width: 52%;
+    }
+  }
+  button {
+    position: relative;
+    z-index: 10;
+    width: 60%;
+    margin-inline: auto;
+    margin-top: 2.25rem;
+    padding: 8px;
+    border: 1px solid var(--very-light-gray);
+    background-color: transparent;
+    color: var(--very-light-gray);
+    transition: all 0.35s ease-in;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--very-light-gray);
+      color: var(--very-dark-violet);
+    }
+    @media (--md) {
+      width: 160px;
+      margin-right: 0;
+      margin-block: auto;
+    }
+  }
+  .pattern {
+    position: absolute;
+    background-image: url(/assets/images/bg-pattern-how-we-work-mobile.svg);
+    width: 176px;
+    height: 317px;
+    right: 0;
+    top: 0;
+    @media (--md) {
+      background-image: url(/assets/images/bg-pattern-how-we-work-desktop.svg);
+      width: 434px;
+      height: 250px;
+      right: 0;
+      top: 0;
+    }
+  }
+</style>

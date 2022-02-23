@@ -22,10 +22,10 @@
 
 .h3 {
   font-size: var(--h3);
-  /* line-height: 40px; */
+  line-height: 40px;
   letter-spacing: -1.5%;
   @media (--sm) {
-    /* line-height: 56px; */
+    line-height: 56px;
     letter-spacing: -0.5%;
   }
 }
