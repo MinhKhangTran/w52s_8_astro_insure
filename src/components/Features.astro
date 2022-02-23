@@ -1,13 +1,99 @@
+---
+const featArray = [
+  {
+    id: 1,
+    icon: "/assets/images/icon-snappy-process.svg",
+    title: "Snappy Process",
+    text: "Our application process can be completed in minutes, not hours. Don’t get stuck filling in tedious forms.",
+  },
+  {
+    id: 2,
+    icon: "/assets/images/icon-affordable-prices.svg",
+    title: "Affordable Prices",
+    text: "We don’t want you worrying about high monthly costs. Our prices may be low, but we still offer the best coverage possible.",
+  },
+  {
+    id: 3,
+    icon: "/assets/images/icon-people-first.svg",
+    title: "People First",
+    text: "Our plans aren’t full of conditions and clauses to prevent payouts. We make sure you’re covered when you need it.",
+  },
+];
+---
+
 <section class="container" id="features" aria-label="features section">
   <div class="line"></div>
-  <h2 class="h2">We're different</h2>
+  <h2 class="h1">We're different</h2>
+  <div class="feat_wrapper">
+    {featArray.map((feat)=>{
+        const {id,icon,title,text} = feat
+    return(
+        <article class="">
+        <div class="image_wrapper">
+            <img src={icon} alt="" aria-hidden="true">
+        </div>
+            <h3 class="h2">{title}</h3>
+            <p>{text}</p>
+        </article>
+    )
+})}
+  </div>
 </section>
 
 <style>
   @import url("../styles/_media.css");
   .line {
+    margin-top: 8.8125rem;
+    width: 150px;
+    height: 1px;
+    background-color: var(--dark-grayish-violet);
+    margin-bottom: 2.5rem;
+    margin-inline: auto;
     @media (--md) {
-      padding-top: 19.125rem;
+      margin-top: 19.125rem;
+      margin-bottom: 4rem;
+      margin-inline: initial;
+    }
+  }
+  h2 {
+    text-align: center;
+    @media (--md) {
+      text-align: left;
+    }
+  }
+  article {
+    text-align: center;
+    @media (--md) {
+      text-align: left;
+    }
+    .image_wrapper {
+      display: flex;
+      justify-content: center;
+      @media (--md) {
+        justify-content: start;
+      }
+    }
+    h3 {
+      padding-block: 2rem 1.25rem;
+    }
+  }
+  article:first-child {
+    padding-top: 5rem;
+    @media (--md) {
+      padding-top: 6rem;
+    }
+  }
+  article {
+    padding-top: 3.5rem;
+    @media (--md) {
+      padding-top: 6rem;
+      width: 337px;
+    }
+  }
+  .feat_wrapper {
+    @media (--md) {
+      display: flex;
+      gap: 2.5rem;
     }
   }
 </style>
