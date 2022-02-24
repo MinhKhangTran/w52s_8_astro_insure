@@ -21,7 +21,11 @@ const navArray = [
           aria-expanded="false"
           aria-controls="navigation"
           ><span class="sr-only">Menu</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
             ><g fill="none" fill-rule="evenodd"
               ><path
                 fill="#FFF"
@@ -62,7 +66,7 @@ const navArray = [
     if (-1 !== toggler.className.indexOf("opened")) {
       toggler.className = toggler.className.replace(" opened", "");
       toggler.setAttribute("aria-expanded", "false");
-      toggler.innerHTML = `   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+      toggler.innerHTML = `   <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32"
             ><g fill="none" fill-rule="evenodd"
               ><path
                 fill="#FFF"
@@ -182,7 +186,7 @@ const navArray = [
       }
     }
     @media (--md) {
-      color: var(--dark-grayish-violet);
+      color: #757079;
     }
   }
   .cta-btn {
