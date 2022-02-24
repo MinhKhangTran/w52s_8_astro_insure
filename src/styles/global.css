@@ -65,3 +65,14 @@ button:focus-visible {
   outline-offset: 0.5rem;
   border-radius: 0;
 } */
+
+.animate {
+  opacity: 0;
+  transform: translateY(5rem);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
