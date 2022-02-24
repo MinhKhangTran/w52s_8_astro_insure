@@ -56,6 +56,7 @@ const navArray = [
 <script>
   const toggler = document.querySelector(".menu-toggle");
   const navBar = document.querySelector(".nav-bar");
+  const header = document.querySelector("header");
   toggler.addEventListener("click", () => {
     // Toggle class "opened". Set also aria-expanded to true or false.
     if (-1 !== toggler.className.indexOf("opened")) {
@@ -73,9 +74,11 @@ const navArray = [
               ></g
             ></svg`;
       navBar.className = navBar.className.replace(" opened", "");
+      header.className = header.className.replace(" opened", "");
     } else {
       toggler.className += " opened";
       navBar.className += " opened";
+      header.className += " opened";
       toggler.setAttribute("aria-expanded", "true");
       toggler.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g fill="none" fill-rule="evenodd"><path fill="#FFF" stroke="#2C2830" stroke-width="1.5" d="M.75.75h30.5v30.5H.75z"/><g fill="#2C2830"><path d="M10.873 9.563l11.314 11.314-1.06 1.06L9.813 10.623z"/><path d="M9.813 20.877L21.127 9.563l1.06 1.06-11.314 11.314z"/></g></g></svg>`;
     }
@@ -89,6 +92,7 @@ const navArray = [
       toggler.className = toggler.className.replace(" opened", "");
       toggler.setAttribute("aria-expanded", "false");
       navBar.className = navBar.className.replace(" opened", "");
+      header.className = header.className.replace(" opened", "");
     }
   });
 </script>
@@ -100,6 +104,11 @@ const navArray = [
     position: relative;
     background-color: white;
     z-index: 10;
+  }
+  header.opened {
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
   .nav-header {
     align-items: center;
@@ -117,11 +126,12 @@ const navArray = [
     }
   }
   ul.opened {
-    position: absolute;
+    position: fixed;
+    top: 0;
     display: flex;
     padding-block: 2rem;
     width: 100%;
-    margin: 0;
+    margin-top: 5rem;
     min-height: calc(100vh - 5rem);
     background-color: var(--very-dark-violet);
     text-align: center;
